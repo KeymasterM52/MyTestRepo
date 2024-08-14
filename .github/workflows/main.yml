@@ -14,6 +14,15 @@ Deploy-development:
 runs-on: ubuntu-latest
 steps:
 #INSTALL NODEJS & NPM ON VERCEL
+
+- uses: actions/checkout@v4
+- uses: actions/setup-node@v4
+  with:
+    node-version: 20
+    cache: 'npm'
+- run: npm ci
+- run: npm test
+
 – uses: actions/checkout@v2
 – name: Install Node.js
 uses: actions/setup-node@v3
